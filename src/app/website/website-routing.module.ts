@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { LayoutComponent } from './components/layout/layout.component';
 import { HomeComponent } from './pages/home/home.component';
+import { ProductsComponent } from './pages/products/products.component';
 
 const routes: Routes = [
 
@@ -18,6 +19,10 @@ const routes: Routes = [
       {
         path: 'home',
         component: HomeComponent
+      },
+      {
+        path: 'products',
+        component: ProductsComponent
       }
     ]
   }
@@ -29,3 +34,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class WebsiteRoutingModule { }
+
+
