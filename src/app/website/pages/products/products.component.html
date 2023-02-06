@@ -1,4 +1,4 @@
-<div class="w-64" *ngFor="let product of products">
+<!-- <div class="w-64" *ngFor="let product of products">
   <a>
     <div class="w-64">
       <div class="h-72 mb-2 border p-2 rounded-md">
@@ -11,4 +11,9 @@
     </div>
    </a>
     <button class="p-2 bg-gray-400 text-lg text-white font-medium w-full rounded-md">Add to bag</button>
+  </div> -->
+
+  <div>
+    <app-product-list [products]="products" ></app-product-list>
   </div>
+
