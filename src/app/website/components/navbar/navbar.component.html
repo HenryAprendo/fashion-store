@@ -42,8 +42,14 @@
         <li>
           <a class="block text-zinc-900 p-2 font-semibold hover:text-blue-700 hover:cursor-pointer" routerLink="/products">Products</a>
         </li>
-        <li>
-          <a class="block text-zinc-900 p-2 font-semibold hover:text-blue-700 hover:cursor-pointer">Categories</a>
+        <li class="relative">
+          <a class="block text-zinc-900 p-2 font-semibold hover:text-blue-700 hover:cursor-pointer" (click)="openCategory()" >Categories</a>
+          <div class="absolute left-0 z-10 bg-white flex flex-col w-44 rounded-lg border p-2" (click)="openCategory()" [ngClass]="category ? 'block' : 'hidden' ">
+            <a class="block mb-1 text-base font-medium p-1 pl-2 rounded hover:bg-slate-600 hover:text-white" [routerLink]="['category', { category: 0}]">electronics</a>
+            <a class="block mb-1 text-base font-medium p-1 pl-2 rounded hover:bg-slate-600 hover:text-white" [routerLink]="['category', { category: 1}]">jewelery</a>
+            <a class="block mb-1 text-base font-medium p-1 pl-2 rounded hover:bg-slate-600 hover:text-white" [routerLink]="['category', { category: 2}]">men's clothing</a>
+            <a class="block mb-1 text-base font-medium p-1 pl-2 rounded hover:bg-slate-600 hover:text-white" [routerLink]="['category', { category: 3}]">women's clothing</a>
+          </div>
         </li>
       </ul>
     </div>
@@ -61,10 +67,16 @@
     <div>
       <ul class="border rounded-b-lg bg-slate-800 p-3">
         <li>
-          <a class="block text-white p-1 font-medium hover:border-b hover:cursor-pointer" routerLink="/products" >Products</a>
+          <a class="block text-white p-1 font-medium hover:cursor-pointer" routerLink="/products" >Products</a>
         </li>
-        <li>
-          <a class="block text-white p-1 font-medium hover:border-b hover:cursor-pointer">Categories</a>
+        <li class="relative">
+          <a class="block text-white p-1 font-medium hover:cursor-pointer" (click)="openCategory()">Categories</a>
+          <div class="w-full absolute z-10 bg-slate-800 text-white flex flex-col w-44 rounded-lg border p-2" (click)="openCategory()" [ngClass]="category ? 'block' : 'hidden' ">
+            <a class="block mb-1 text-base font-medium p-1 pl-2 rounded hover:bg-slate-600 hover:text-white" [routerLink]="['category', { category: 0}]">electronics</a>
+            <a class="block mb-1 text-base font-medium p-1 pl-2 rounded hover:bg-slate-600 hover:text-white" [routerLink]="['category', { category: 1}]">jewelery</a>
+            <a class="block mb-1 text-base font-medium p-1 pl-2 rounded hover:bg-slate-600 hover:text-white" [routerLink]="['category', { category: 2}]">men's clothing</a>
+            <a class="block mb-1 text-base font-medium p-1 pl-2 rounded hover:bg-slate-600 hover:text-white" [routerLink]="['category', { category: 3}]">women's clothing</a>
+          </div>
         </li>
       </ul>
     </div>
