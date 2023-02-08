@@ -1,0 +1,18 @@
+
+<section class="flex flex-col md:flex-row my-4" *ngIf="product$ | async as product">
+  <div class="p-6 md:w-1/2">
+    <article class="">
+      <h2 class="text-3xl text-gray-700 font-bold mb-4 md:text-4xl lg:text-5xl lg:mb-7">{{product.title}}</h2>
+      <p class="text-xl text-gray-800 font-medium mb-4 md:text-2xl lg:text-3xl lg:mb-7">${{product.price}}</p>
+      <p class="text-base text-gray-600 mb-4 md:text-lg lg:text-xl lg:mb-7">{{product.description}}</p>
+      <button class="hidden w-full max-w-md text-lg text-white font-medium rounded-md mb-4 px-3 py-4 bg-blue-600 hover:bg-blue-700 active:bg-blue-900 md:block lg:mb-7">Add to bag</button>
+      <p class="text-base text-gray-500 md:text-lg">in stock and ready to ship {{product.rating.count}}</p>
+    </article>
+  </div>
+  <div class="max-w-lg p-6 m-auto md:w-1/2 md:border md:overflow-hidden md:rounded-2xl">
+    <img class="w-full" [src]="product.image" alt="{{product.title}}">
+  </div>
+  <div class="p-6 md:hidden">
+    <button class="w-full text-lg text-white font-medium rounded-md mb-4 px-3 py-4 bg-blue-600 hover:bg-blue-700 active:bg-blue-900 ">Add to bag</button>
+  </div>
+</section>

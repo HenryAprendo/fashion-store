@@ -2,7 +2,6 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Product } from './../../../models/product/product.model';
 import { RouterModule } from '@angular/router';
-import { RouterTestingModule } from '@angular/router/testing';
 
 @Component({
   selector: 'app-product',
@@ -10,7 +9,7 @@ import { RouterTestingModule } from '@angular/router/testing';
   imports: [CommonModule, RouterModule],
   template: `
     <article>
-      <a class="hover:opacity-75 hover:cursor-pointer" [routerLink]="['detail', product.id]">
+      <a class="hover:opacity-75 hover:cursor-pointer" [routerLink]="['./../detail', product.id]">
         <div class="w-64 sm:w-48 md:w-60 lg:w-72">
           <div class="h-72 border p-2 rounded-md">
             <img class="w-full h-full" [src]="product.image" alt="{{product.title}}">
