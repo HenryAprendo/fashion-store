@@ -27,7 +27,6 @@ export class DetailComponent implements OnInit {
       const id = Number(params.get('id'));
       if(id !== null){
         this.product$ = this.productService.getOne(id);
-        console.log(this.product$.subscribe(data => console.log(data)))
       }
     })
   }

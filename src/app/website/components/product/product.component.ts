@@ -20,7 +20,7 @@ import { RouterModule } from '@angular/router';
           </div>
         </div>
       </a>
-      <button (click)="addProduct(product.id)" class="p-2 bg-gray-400 text-lg text-white font-medium w-full rounded-md hover:bg-gray-500 active:bg-gray-700">Add to bag</button>
+      <button (click)="addProduct(product)" class="p-2 bg-gray-400 text-lg text-white font-medium w-full rounded-md hover:bg-gray-500 active:bg-gray-700">Add to bag</button>
     </article>
   `,
   styles: [
@@ -29,10 +29,10 @@ import { RouterModule } from '@angular/router';
 export class ProductComponent {
   @Input() product!:Product;
 
-  @Output() addEv = new EventEmitter<number>();
+  @Output() addEv = new EventEmitter<Product>();
 
-  addProduct(id:number){
-    this.addEv.emit(id);
+  addProduct(product:Product){
+    this.addEv.emit(product);
   }
 
 }
