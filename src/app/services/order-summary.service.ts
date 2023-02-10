@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { of } from 'rxjs';
 import { Shopping } from './../models/shopping/shopping.model';
 
+
 const ESTIMATE = 5;
 
 @Injectable({
@@ -17,7 +18,7 @@ export class OrderSummaryService {
       .reduce((acc,actual) => acc + actual, 0)
 
     const taxes = subtotal * .19;
-    const total = subtotal + taxes;
+    const total = subtotal + taxes + ESTIMATE;
 
     return of({
       total: total,

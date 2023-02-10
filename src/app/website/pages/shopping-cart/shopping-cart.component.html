@@ -1,6 +1,7 @@
 
+<!-- seccion de productos agregados en el carrito -->
 <section>
-  <div class="w-full max-w-3xl m-auto px-2 ">
+  <div class="w-full max-w-3xl m-auto px-2 last:border-b">
     <h1 class="text-xl font-bold my-8 lg:text-3xl">Shopping Cart</h1>
     <div class="w-full grid grid-cols-4 border-t py-4 lg:py-10" *ngFor="let item of shoppingCart">
       <div class="w-14 h-14 sm:w-24 sm:h-24 lg:w-32 lg:h-32">
@@ -17,7 +18,7 @@
               <option value="4">4</option>
               <option value="5">5</option>
             </select>
-            <button class="text-blue-500 text-sm font-medium lg:text-base" >Remove</button>
+            <button class="text-blue-500 text-sm font-medium lg:text-base" (click)="remove(item.product.id)" >Remove</button>
           </div>
         </div>
         <p class="self-end flex items-center gap-1" *ngIf="item.product.rating.count > 0">
@@ -27,7 +28,53 @@
           <span class="text-sm font-medium text-green-500">in stock</span>
         </p>
       </div>
-      <p class="text-sm font-semibold justify-self-end lg:text-base" >${{item.product.price}}</p>
+      <p class="text-sm font-semibold justify-self-end lg:text-base" >{{item.product.price | currency}}</p>
     </div>
   </div>
 </section>
+
+<!-- total de la compra -->
+<section *ngIf="summary">
+  <div class="w-full max-w-2xl m-auto p-2 mt-8">
+    <blockquote class="bg-gray-100 rounded-xl p-6">
+      <div class="flex justify-between py-4 border-b">
+        <p class="text-base text-gray-500 ">Subtotal</p>
+        <p class="text-base text-gray-700 font-semibold">{{summary.subtotal | currency}}</p>
+      </div>
+      <div class="flex justify-between py-4 border-b">
+        <p class="text-base text-gray-500 ">Shipping</p>
+        <p class="text-base text-gray-700 font-semibold">{{summary.shipment| currency}}</p>
+      </div>
+      <div class="flex justify-between py-4 border-b">
+        <p class="text-base text-gray-500 ">Tax</p>
+        <p class="text-base text-gray-700 font-semibold">{{summary.taxes | currency}}</p>
+      </div>
+      <div class="flex justify-between py-4 border-b">
+        <h2 class="text-xl text-gray-500 font-semibold">Order total</h2>
+        <p class="text-xl text-gray-700 font-semibold">{{summary.total | currency}}</p>
+      </div>
+    </blockquote>
+    <button class="w-full text-xl text-white font-medium rounded-md my-8 px-3 py-3 bg-blue-600 hover:bg-blue-700 active:bg-blue-900">Checkout</button>
+    <a routerLink="../products" class="flex items-center justify-center gap-2 hover:cursor-pointer">
+      or <span class="text-sky-700 font-medium hover:text-sky-800">Continue Shopping</span>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-3 h-3 text-sky-700 font-medium">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+      </svg>
+    </a>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
