@@ -7,11 +7,12 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './pages/home/home.component';
 
 
+
 @NgModule({
   declarations: [
     LayoutComponent,
     NavbarComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     CommonModule,

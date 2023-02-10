@@ -6,6 +6,7 @@ import { CategoryComponent } from './pages/category/category.component';
 import { DetailComponent } from './pages/detail/detail.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ProductsComponent } from './pages/products/products.component';
+import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.component';
 
 const routes: Routes = [
 
@@ -33,6 +34,10 @@ const routes: Routes = [
       {
         path: 'detail/:id',
         loadComponent: () => import('./pages/detail/detail.component').then(m => m.DetailComponent)
+      },
+      {
+        path: 'shopping-cart',
+        component: ShoppingCartComponent
       }
     ]
   }

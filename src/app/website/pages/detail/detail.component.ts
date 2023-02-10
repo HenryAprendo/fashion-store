@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute, ParamMap, Router  } from '@angular/router';
-import { Observable, of, switchMap } from 'rxjs';
+import { ActivatedRoute, Router  } from '@angular/router';
+import { Observable } from 'rxjs';
 import { Product } from './../../../models/product/product.model';
 import { ProductService } from './../../../services/product.service';
+import { CartService } from './../../../services/cart.service';
 
 @Component({
   selector: 'app-detail',
@@ -19,7 +20,8 @@ export class DetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private productService: ProductService
+    private productService: ProductService,
+    private cartService: CartService
   ){ }
 
   ngOnInit() {
@@ -31,6 +33,9 @@ export class DetailComponent implements OnInit {
     })
   }
 
+  addProduct(product:Product){
+    this.cartService.addCart(product);
+  }
 
 }
 
