@@ -65,6 +65,16 @@
 </section>
 
 
+<!-- Sin compras en el carrito -->
+<section *ngIf="!summary" class="p-6">
+  <div class="max-w-sm m-auto h-80 flex flex-col gap-6 items-center justify-center shadow py-5 rounded-md bg-yellow-300">
+    <h2 class="text-3xl font-medium text-indigo-900 text-center mb-4"> !oh, there are no products in the cart yet.¡</h2>
+    <a routerLink="../products"
+      class="flex items-center justify-center gap-2 p-3 rounded-md bg-indigo-700 hover:bg-indigo-800 text-white text-xl font-medium hover:cursor-pointer  ">
+      go to the <span>product section</span>
+    </a>
+  </div>
+</section>
 
 
 

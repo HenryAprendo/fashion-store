@@ -5,6 +5,7 @@ import { OrderSummaryService } from './../../../services/order-summary.service';
 import { Shopping } from './../../../models/shopping/shopping.model';
 import { Summary } from './../../../models/summary/summary.model';
 import { RouterModule } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -17,7 +18,7 @@ export class ShoppingCartComponent implements OnInit{
 
   shoppingCart!: Shopping[];
 
-  summary!:Summary;
+  summary:Summary|null = null;
 
   constructor(
     private cartService:CartService,
@@ -28,18 +29,16 @@ export class ShoppingCartComponent implements OnInit{
     this.cartService.cart
       .subscribe(data => {
         this.shoppingCart = data;
-        if(data.length > 0){
-          this.orderSummary();
-        }
+        this.orderSummary();
       });
 
     }
 
   orderSummary(){
     this.orderService.calculate(this.shoppingCart)
-      .subscribe(data => {
+      .subscribe( data => {
         this.summary = data;
-      })
+      });
   }
 
   remove(id:number){
