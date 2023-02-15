@@ -5,12 +5,12 @@ import { OrderSummaryService } from './../../../services/order-summary.service';
 import { Shopping } from './../../../models/shopping/shopping.model';
 import { Summary } from './../../../models/summary/summary.model';
 import { RouterModule } from '@angular/router';
-import { Observable } from 'rxjs';
+import { ListProductCartComponent } from './../../components/list-product-cart/list-product-cart.component';
 
 @Component({
   selector: 'app-shopping-cart',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, ListProductCartComponent],
   templateUrl: './shopping-cart.component.html',
   styleUrls: ['./shopping-cart.component.css']
 })

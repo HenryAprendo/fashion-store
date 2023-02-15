@@ -26,8 +26,18 @@ export class CartService {
       this.shoppingCart.push(shopping);
     }
     this.cart$.next(this.shoppingCart);
+  }
 
-    console.log(this.shoppingCart);
+
+  changeQuantity(shopping:Shopping){
+    const quantity:number = shopping.amount;
+    const index = this.shoppingCart.findIndex(item => item.product.id);
+    if(index >= 0){
+      this.shoppingCart[index].amount = quantity;
+      this.cart$.next(this.shoppingCart);
+      console.log(this.shoppingCart)
+    }
+
   }
 
 

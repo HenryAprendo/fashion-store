@@ -3,7 +3,10 @@
 <section>
   <div class="w-full max-w-3xl m-auto px-2 last:border-b">
     <h1 class="text-xl font-bold my-8 lg:text-3xl">Shopping Cart</h1>
-    <div class="w-full grid grid-cols-4 border-t py-4 lg:py-10" *ngFor="let item of shoppingCart">
+
+    <app-list-product-cart [productCarts]="shoppingCart" ></app-list-product-cart>
+
+    <!-- <div class="w-full grid grid-cols-4 border-t py-4 lg:py-10" *ngFor="let item of shoppingCart">
       <div class="w-14 h-14 sm:w-24 sm:h-24 lg:w-32 lg:h-32">
         <img class="w-full h-full" [src]="item.product.image" alt="image of product">
       </div>
@@ -29,7 +32,7 @@
         </p>
       </div>
       <p class="text-sm font-semibold justify-self-end lg:text-base" >{{item.product.price | currency}}</p>
-    </div>
+    </div> -->
   </div>
 </section>
 
