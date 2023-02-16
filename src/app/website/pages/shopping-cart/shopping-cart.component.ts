@@ -6,6 +6,7 @@ import { Shopping } from './../../../models/shopping/shopping.model';
 import { Summary } from './../../../models/summary/summary.model';
 import { RouterModule } from '@angular/router';
 import { ListProductCartComponent } from './../../components/list-product-cart/list-product-cart.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -22,7 +23,8 @@ export class ShoppingCartComponent implements OnInit{
 
   constructor(
     private cartService:CartService,
-    private orderService: OrderSummaryService
+    private orderService: OrderSummaryService,
+    private router:Router
   ){ }
 
   ngOnInit() {
@@ -41,8 +43,8 @@ export class ShoppingCartComponent implements OnInit{
       });
   }
 
-  remove(id:number){
-    this.cartService.removeCart(id)
+  navigate(){
+    this.router.navigate(['/checkout-forms']);
   }
 
 

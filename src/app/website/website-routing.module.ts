@@ -2,8 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { LayoutComponent } from './components/layout/layout.component';
-import { CategoryComponent } from './pages/category/category.component';
-import { DetailComponent } from './pages/detail/detail.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.component';
@@ -38,7 +36,12 @@ const routes: Routes = [
       {
         path: 'shopping-cart',
         component: ShoppingCartComponent
+      },
+      {
+        path: 'checkout-forms',
+        loadComponent: () => import('./pages/checkout-forms/checkout-forms.component').then(m => m.CheckoutFormsComponent)
       }
+
     ]
   }
 

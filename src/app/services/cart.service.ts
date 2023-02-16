@@ -8,8 +8,8 @@ import { Shopping } from './../models/shopping/shopping.model';
 })
 export class CartService {
 
+  // productos del carrito
   shoppingCart: Shopping[] = [];
-
   cart$ = new BehaviorSubject<Shopping[]>([]);
   cart = this.cart$.asObservable();
 
@@ -28,18 +28,14 @@ export class CartService {
     this.cart$.next(this.shoppingCart);
   }
 
-
   changeQuantity(shopping:Shopping){
     const quantity:number = shopping.amount;
     const index = this.shoppingCart.findIndex(item => item.product.id);
     if(index >= 0){
       this.shoppingCart[index].amount = quantity;
       this.cart$.next(this.shoppingCart);
-      console.log(this.shoppingCart)
     }
-
   }
-
 
   removeCart(id:number){
     const index = this.shoppingCart.findIndex(item => item.product.id === id);

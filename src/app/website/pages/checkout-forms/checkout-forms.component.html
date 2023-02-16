@@ -1,0 +1,163 @@
+<section class="bg-slate-50 p-3.5">
+  <div>
+    <section>
+      <form class="divide-y">
+        <section class="py-8">
+          <h2 class="text-base font-medium mb-4">Contact information</h2>
+          <div>
+            <label for="email" class="block text-xs font-medium mb-1">Email address</label>
+            <input class="block w-full h-9 rounded-md border py-2 px-3" type="email" name="email" id="email">
+            <!-- <div>mensajes error</div> -->
+          </div>
+        </section>
+
+        <section class="py-8" >
+          <h2 class="text-base font-medium mb-4" >Shipping information</h2>
+          <div class="sm:flex gap-3">
+            <div class="my-5 flex-1">
+              <label for="name" class="block text-xs font-medium mb-1" >First name</label>
+              <input class="block w-full h-9 rounded-md border py-2 px-3" type="text" name="name" id="name" >
+              <!-- <div>mensajes error</div> -->
+            </div>
+            <div class="my-5 flex-1">
+              <label for="last" class="block text-xs font-medium mb-1" >Last name</label>
+              <input class="block w-full h-9 rounded-md border py-2 px-3" type="text" name="last" id="last" >
+              <!-- <div>mensajes error</div> -->
+            </div>
+          </div>
+
+          <div class="my-5">
+            <label for="company" class="block text-xs font-medium mb-1" >Company</label>
+            <input class="block w-full h-9 rounded-md border py-2 px-3" type="text" name="company" id="company">
+            <!-- <div>mensajes error</div> -->
+          </div>
+
+          <div class="my-5">
+            <label for="address" class="block text-xs font-medium mb-1" >Address</label>
+            <input class="block w-full h-9 rounded-md border py-2 px-3" type="text" name="address" id="address">
+            <!-- <div>mensajes error</div> -->
+          </div>
+
+          <div class="my-5">
+            <label for="apartment" class="block text-xs font-medium mb-1">Apartment, suite, etc.</label>
+            <input class="block w-full h-9 rounded-md border py-2 px-3" type="text" name="apartment" id="apartment">
+            <!-- <div>mensajes error</div> -->
+          </div>
+
+          <div class="sm:flex sm:gap-3">
+            <div class="my-5 flex-1">
+              <label for="ciyt" class="block text-xs font-medium mb-1">City</label>
+              <input class="block w-full h-9 rounded-md border py-2 px-3" type="text" name="city" id="city">
+              <!-- <div>mensajes error</div> -->
+            </div>
+
+            <div class="my-5 flex-1">
+              <label for="country" class="block text-xs font-medium mb-1">Country</label>
+              <select name="country" id="country" class="block w-full h-9 rounded-md border">
+                <option value="">United State</option>
+              </select>
+              <!-- <div>mensajes error</div> -->
+            </div>
+          </div>
+
+          <div class="sm:flex sm:gap-3">
+            <div class="my-5 flex-1">
+              <label for="province" class="block text-xs font-medium mb-1">State / Province</label>
+              <input class="block w-full h-9 rounded-md border py-2 px-3" name="province" id="province">
+              <!-- <div>mensajes error</div> -->
+            </div>
+
+            <div class="my-5 flex-1">
+              <label for="code" class="block text-xs font-medium mb-1">Postal code</label>
+              <input class="block w-full h-9 rounded-md border py-2 px-3" name="code" id="code">
+              <!-- <div>mensajes error</div> -->
+            </div>
+          </div>
+
+          <div class="my-5">
+            <label for="phone" class="block text-xs font-medium mb-1">Phone</label>
+            <input class="block w-full h-9 rounded-md border py-2 px-3" name="phone" id="phone">
+            <!-- <div>mensajes error</div> -->
+          </div>
+
+        </section>
+
+        <section class="py-8">
+          <h2 class="text-base font-medium mb-4">Delivery method</h2>
+          <div class="sm:flex sm:gap-3">
+            <section class="flex-1 flex justify-between items-start border rounded-xl p-3 mb-3">
+              <div class="h-20 grid grid-cols-1">
+                <div>
+                  <h3 class="text-xs font-medium">Standard</h3>
+                  <p class="text-xs text-slate-500">4-10 business days</p>
+                </div>
+                <p class="text-xs font-medium self-end">$5.00</p>
+              </div>
+              <input type="checkbox">
+            </section>
+
+            <section class="flex-1 flex justify-between items-start border rounded-xl p-3 mb-3">
+              <div class="h-20 grid grid-cols-1">
+                <div>
+                  <h3 class="text-xs font-medium">Express</h3>
+                  <p class="text-xs text-slate-500">2-5 business days</p>
+                </div>
+                <p class="text-xs font-medium self-end">$16.00</p>
+              </div>
+              <input type="checkbox">
+            </section>
+          </div>
+        </section>
+
+        <section class="py-8">
+          <h2 class="text-base font-medium mb-4">Payment</h2>
+          <div class="my-5 flex flex-col gap-2 sm:flex-row sm:gap-8 ">
+            <label class="flex items-center">
+              <input type="radio" name="pay"><span class="text-xs font-medium ml-2" >Credit card</span>
+            </label>
+            <label class="flex items-center">
+              <input type="radio" name="pay"><span class="text-xs font-medium ml-2">PayPal</span>
+            </label>
+            <label class="flex items-center">
+              <input type="radio" name="pay"><span class="text-xs font-medium ml-2">eTransfer</span>
+            </label>
+          </div>
+
+          <div class="my-5">
+            <label class="block text-xs font-medium mb-1" for="card">Card number</label>
+            <input class="block w-full h-9 rounded-md border py-2 px-3" type="number" name="card" id="card">
+            <!-- <div>mensaje error</div> -->
+          </div>
+
+          <div class="my-5">
+            <label class="block text-xs font-medium mb-1" for="name-card">Name on card</label>
+            <input class="block w-full h-9 rounded-md border py-2 px-3" type="text" name="name-card" id="name-card">
+            <!-- <div>mensaje error</div> -->
+          </div>
+
+          <section class="flex justify-between gap-3">
+            <div class="my-5 w-3/4">
+              <label class="block text-xs font-medium mb-1" for="date">Expiration date (MM/YY)</label>
+              <input class="block w-full h-9 rounded-md border py-2 px-3" type="datetime" name="date" id="date">
+            </div>
+
+            <div class="my-5 w-1/4">
+              <label class="block text-xs font-medium mb-1" for="cvc">CVC</label>
+              <input class="block w-full h-9 rounded-md border py-2 px-3" type="number" name="cvc" id="cvc">
+            </div>
+          </section>
+
+        </section>
+
+      </form>
+    </section>
+
+    <!-- summary total -->
+    <section></section>
+  </div>
+</section>
+
+
+
+
+

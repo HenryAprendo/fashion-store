@@ -21,15 +21,7 @@ export class ProductCartComponent implements OnInit {
 
   quantity = new FormControl(1);
 
-  productCart!:Shopping;
-
-  @Input('productCart')
-  set update(data:Shopping){
-    this.productCart = data;
-    this.quantity.setValue(this.productCart.amount);
-    console.log(this.productCart.amount);
-    console.log('no volvio a entrar')
-  }
+  @Input() productCart!:Shopping;
 
   @Output() removeEvt = new EventEmitter<number>();
 
@@ -38,7 +30,9 @@ export class ProductCartComponent implements OnInit {
   constructor(){ }
 
   ngOnInit() {
-    // this.quantity.setValue(this.productCart.amount);
+
+    // establece el valor del input select, en el primer render del componente.
+    this.quantity.setValue(this.productCart.amount);
 
     this.quantity.valueChanges
       .subscribe(value => {
@@ -47,7 +41,6 @@ export class ProductCartComponent implements OnInit {
           this.add(this.productCart);
         }
       });
-
   }
 
   remove(id: number) {
@@ -59,6 +52,14 @@ export class ProductCartComponent implements OnInit {
   }
 
 }
+
+
+
+
+
+
+
+
 
 
 
