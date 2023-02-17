@@ -42,4 +42,29 @@ export class CheckoutFormsComponent {
       });
   }
 
+  removeProductCart(id:number){
+    this.cartService.removeCart(id);
+  }
+
+  quantityProductCart(shopping:Shopping){
+    this.cartService.changeQuantity(shopping);
+  }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

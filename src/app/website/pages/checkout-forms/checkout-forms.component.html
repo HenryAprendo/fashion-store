@@ -162,6 +162,8 @@
           <app-product-cart-summary
             *ngFor="let item of shoppingCart"
             [productCart]="item"
+            (addEvt)="quantityProductCart($event)"
+            (removeEvt)="removeProductCart($event)"
           >
           </app-product-cart-summary>
         </div>

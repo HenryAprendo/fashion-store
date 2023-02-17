@@ -65,7 +65,8 @@
 
   </nav>
 
-  <section [ngClass]="open ? 'block' : 'hidden'" class="absolute inset-x-0 sm:hidden">
+  <!-- menú mobile que abre con el boton de menu hamburguesa -->
+  <section [ngClass]="open ? 'block' : 'hidden'" class="absolute inset-x-0 z-10 sm:hidden">
     <div>
       <ul class="border rounded-b-lg bg-slate-800 p-3">
         <li>

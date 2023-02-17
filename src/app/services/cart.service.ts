@@ -40,21 +40,10 @@ export class CartService {
   removeCart(id:number){
     const index = this.shoppingCart.findIndex(item => item.product.id === id);
     if(index >= 0){
-      if(this.shoppingCart[index].amount > 0){
-        this.shoppingCart[index].amount -= 1;
-      }
-
-      if(this.shoppingCart[index].amount === 0){
-        this.shoppingCart.splice(index,1);
-      }
-
+      this.shoppingCart.splice(index,1);
       this.cart$.next(this.shoppingCart);
     }
   }
-
-
-
-
 
 }
 
