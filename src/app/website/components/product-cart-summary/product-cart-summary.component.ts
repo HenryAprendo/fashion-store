@@ -2,16 +2,16 @@ import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormControl } from '@angular/forms';
 import { Shopping } from './../../../models/shopping/shopping.model';
-import { OPTIONS } from './../../../util/option';
+import { OPTIONS } from './../../../../app/util/option';
 
 @Component({
-  selector: 'app-product-cart',
+  selector: 'app-product-cart-summary',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
-  templateUrl: './product-cart.component.html',
-  styleUrls: ['./product-cart.component.css']
+  imports: [CommonModule,ReactiveFormsModule],
+  templateUrl: './product-cart-summary.component.html',
+  styleUrls: ['./product-cart-summary.component.css']
 })
-export class ProductCartComponent implements OnInit {
+export class ProductCartSummaryComponent {
 
   options = OPTIONS;
 
@@ -48,16 +48,3 @@ export class ProductCartComponent implements OnInit {
   }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

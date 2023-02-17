@@ -1,59 +1,61 @@
-<section class="bg-slate-50 p-3.5">
-  <div>
-    <section>
+<section class="bg-slate-50 px-3.5 pt-3.5 lg:px-6">
+  <div class="flex flex-col lg:flex-row lg:gap-10">
+
+    <!-- sección de formularios -->
+    <section class="flex-1">
       <form class="divide-y">
         <section class="py-8">
-          <h2 class="text-base font-medium mb-4">Contact information</h2>
+          <h2 class="text-base font-medium mb-4 lg:text-xl">Contact information</h2>
           <div>
-            <label for="email" class="block text-xs font-medium mb-1">Email address</label>
-            <input class="block w-full h-9 rounded-md border py-2 px-3" type="email" name="email" id="email">
+            <label for="email" class="block text-xs font-medium mb-1 lg:text-base">Email address</label>
+            <input class="block w-full h-9 rounded-md border-2 py-2 px-3 text-slate-600" type="email" name="email" id="email">
             <!-- <div>mensajes error</div> -->
           </div>
         </section>
 
         <section class="py-8" >
-          <h2 class="text-base font-medium mb-4" >Shipping information</h2>
+          <h2 class="text-base font-medium mb-4 lg:text-lg" >Shipping information</h2>
           <div class="sm:flex gap-3">
             <div class="my-5 flex-1">
-              <label for="name" class="block text-xs font-medium mb-1" >First name</label>
-              <input class="block w-full h-9 rounded-md border py-2 px-3" type="text" name="name" id="name" >
+              <label for="name" class="block text-xs font-medium mb-1 lg:text-base" >First name</label>
+              <input class="block w-full h-9 rounded-md border-2 py-2 px-3 text-slate-600" type="text" name="name" id="name" >
               <!-- <div>mensajes error</div> -->
             </div>
             <div class="my-5 flex-1">
-              <label for="last" class="block text-xs font-medium mb-1" >Last name</label>
-              <input class="block w-full h-9 rounded-md border py-2 px-3" type="text" name="last" id="last" >
+              <label for="last" class="block text-xs font-medium mb-1 lg:text-base" >Last name</label>
+              <input class="block w-full h-9 rounded-md border-2 py-2 px-3 text-slate-600" type="text" name="last" id="last" >
               <!-- <div>mensajes error</div> -->
             </div>
           </div>
 
           <div class="my-5">
-            <label for="company" class="block text-xs font-medium mb-1" >Company</label>
-            <input class="block w-full h-9 rounded-md border py-2 px-3" type="text" name="company" id="company">
+            <label for="company" class="block text-xs font-medium mb-1 lg:text-base" >Company</label>
+            <input class="block w-full h-9 rounded-md border-2 py-2 px-3 text-slate-600" type="text" name="company" id="company">
             <!-- <div>mensajes error</div> -->
           </div>
 
           <div class="my-5">
-            <label for="address" class="block text-xs font-medium mb-1" >Address</label>
-            <input class="block w-full h-9 rounded-md border py-2 px-3" type="text" name="address" id="address">
+            <label for="address" class="block text-xs font-medium mb-1 lg:text-base" >Address</label>
+            <input class="block w-full h-9 rounded-md border-2 py-2 px-3 text-slate-600" type="text" name="address" id="address">
             <!-- <div>mensajes error</div> -->
           </div>
 
           <div class="my-5">
-            <label for="apartment" class="block text-xs font-medium mb-1">Apartment, suite, etc.</label>
-            <input class="block w-full h-9 rounded-md border py-2 px-3" type="text" name="apartment" id="apartment">
+            <label for="apartment" class="block text-xs font-medium mb-1 lg:text-base">Apartment, suite, etc.</label>
+            <input class="block w-full h-9 rounded-md border-2 py-2 px-3 text-slate-600" type="text" name="apartment" id="apartment">
             <!-- <div>mensajes error</div> -->
           </div>
 
           <div class="sm:flex sm:gap-3">
             <div class="my-5 flex-1">
-              <label for="ciyt" class="block text-xs font-medium mb-1">City</label>
-              <input class="block w-full h-9 rounded-md border py-2 px-3" type="text" name="city" id="city">
+              <label for="ciyt" class="block text-xs font-medium mb-1 lg:text-base">City</label>
+              <input class="block w-full h-9 rounded-md border-2 py-2 px-3 text-slate-600" type="text" name="city" id="city">
               <!-- <div>mensajes error</div> -->
             </div>
 
             <div class="my-5 flex-1">
-              <label for="country" class="block text-xs font-medium mb-1">Country</label>
-              <select name="country" id="country" class="block w-full h-9 rounded-md border">
+              <label for="country" class="block text-xs font-medium mb-1 lg:text-base">Country</label>
+              <select name="country" id="country" class="block w-full h-9 rounded-md border-2">
                 <option value="">United State</option>
               </select>
               <!-- <div>mensajes error</div> -->
@@ -62,36 +64,36 @@
 
           <div class="sm:flex sm:gap-3">
             <div class="my-5 flex-1">
-              <label for="province" class="block text-xs font-medium mb-1">State / Province</label>
-              <input class="block w-full h-9 rounded-md border py-2 px-3" name="province" id="province">
+              <label for="province" class="block text-xs font-medium mb-1 lg:text-base">State / Province</label>
+              <input class="block w-full h-9 rounded-md border-2 py-2 px-3 text-slate-600" name="province" id="province">
               <!-- <div>mensajes error</div> -->
             </div>
 
             <div class="my-5 flex-1">
-              <label for="code" class="block text-xs font-medium mb-1">Postal code</label>
-              <input class="block w-full h-9 rounded-md border py-2 px-3" name="code" id="code">
+              <label for="code" class="block text-xs font-medium mb-1 lg:text-base">Postal code</label>
+              <input class="block w-full h-9 rounded-md border-2 py-2 px-3 text-slate-600" name="code" id="code">
               <!-- <div>mensajes error</div> -->
             </div>
           </div>
 
           <div class="my-5">
-            <label for="phone" class="block text-xs font-medium mb-1">Phone</label>
-            <input class="block w-full h-9 rounded-md border py-2 px-3" name="phone" id="phone">
+            <label for="phone" class="block text-xs font-medium mb-1 lg:text-base">Phone</label>
+            <input class="block w-full h-9 rounded-md border-2 py-2 px-3 text-slate-600" name="phone" id="phone">
             <!-- <div>mensajes error</div> -->
           </div>
 
         </section>
 
         <section class="py-8">
-          <h2 class="text-base font-medium mb-4">Delivery method</h2>
+          <h2 class="text-base font-medium mb-4 lg:text-lg">Delivery method</h2>
           <div class="sm:flex sm:gap-3">
             <section class="flex-1 flex justify-between items-start border rounded-xl p-3 mb-3">
               <div class="h-20 grid grid-cols-1">
                 <div>
-                  <h3 class="text-xs font-medium">Standard</h3>
-                  <p class="text-xs text-slate-500">4-10 business days</p>
+                  <h3 class="text-xs font-medium lg:text-sm">Standard</h3>
+                  <p class="text-xs text-slate-500 lg:text-sm">4-10 business days</p>
                 </div>
-                <p class="text-xs font-medium self-end">$5.00</p>
+                <p class="text-xs font-medium lg:text-sm self-end">$5.00</p>
               </div>
               <input type="checkbox">
             </section>
@@ -99,51 +101,51 @@
             <section class="flex-1 flex justify-between items-start border rounded-xl p-3 mb-3">
               <div class="h-20 grid grid-cols-1">
                 <div>
-                  <h3 class="text-xs font-medium">Express</h3>
-                  <p class="text-xs text-slate-500">2-5 business days</p>
+                  <h3 class="text-xs font-medium lg:text-sm">Express</h3>
+                  <p class="text-xs text-slate-500 lg:text-sm">2-5 business days</p>
                 </div>
-                <p class="text-xs font-medium self-end">$16.00</p>
+                <p class="text-xs font-medium lg:text-sm self-end">$16.00</p>
               </div>
               <input type="checkbox">
             </section>
           </div>
         </section>
 
-        <section class="py-8">
-          <h2 class="text-base font-medium mb-4">Payment</h2>
+        <section class="pt-8">
+          <h2 class="text-base font-medium mb-4 lg:text-lg">Payment</h2>
           <div class="my-5 flex flex-col gap-2 sm:flex-row sm:gap-8 ">
             <label class="flex items-center">
-              <input type="radio" name="pay"><span class="text-xs font-medium ml-2" >Credit card</span>
+              <input type="radio" name="pay"><span class="text-xs font-medium ml-2 lg:text-base" >Credit card</span>
             </label>
             <label class="flex items-center">
-              <input type="radio" name="pay"><span class="text-xs font-medium ml-2">PayPal</span>
+              <input type="radio" name="pay"><span class="text-xs font-medium ml-2 lg:text-base">PayPal</span>
             </label>
             <label class="flex items-center">
-              <input type="radio" name="pay"><span class="text-xs font-medium ml-2">eTransfer</span>
+              <input type="radio" name="pay"><span class="text-xs font-medium ml-2 lg:text-base">eTransfer</span>
             </label>
           </div>
 
           <div class="my-5">
-            <label class="block text-xs font-medium mb-1" for="card">Card number</label>
-            <input class="block w-full h-9 rounded-md border py-2 px-3" type="number" name="card" id="card">
+            <label class="block text-xs font-medium mb-1 lg:text-base" for="card">Card number</label>
+            <input class="block w-full h-9 rounded-md border-2 py-2 px-3 text-slate-600" type="number" name="card" id="card">
             <!-- <div>mensaje error</div> -->
           </div>
 
           <div class="my-5">
-            <label class="block text-xs font-medium mb-1" for="name-card">Name on card</label>
-            <input class="block w-full h-9 rounded-md border py-2 px-3" type="text" name="name-card" id="name-card">
+            <label class="block text-xs font-medium mb-1 lg:text-base" for="name-card">Name on card</label>
+            <input class="block w-full h-9 rounded-md border-2 py-2 px-3 text-slate-600" type="text" name="name-card" id="name-card">
             <!-- <div>mensaje error</div> -->
           </div>
 
           <section class="flex justify-between gap-3">
             <div class="my-5 w-3/4">
-              <label class="block text-xs font-medium mb-1" for="date">Expiration date (MM/YY)</label>
-              <input class="block w-full h-9 rounded-md border py-2 px-3" type="datetime" name="date" id="date">
+              <label class="block text-xs font-medium mb-1 lg:text-base" for="date">Expiration date (MM/YY)</label>
+              <input class="block w-full h-9 rounded-md border-2 pt-2 px-3 text-slate-600" type="datetime" name="date" id="date">
             </div>
 
             <div class="my-5 w-1/4">
-              <label class="block text-xs font-medium mb-1" for="cvc">CVC</label>
-              <input class="block w-full h-9 rounded-md border py-2 px-3" type="number" name="cvc" id="cvc">
+              <label class="block text-xs font-medium mb-1 lg:text-base" for="cvc">CVC</label>
+              <input class="block w-full h-9 rounded-md border-2 py-2 px-3 text-slate-600" type="number" name="cvc" id="cvc">
             </div>
           </section>
 
@@ -152,8 +154,47 @@
       </form>
     </section>
 
-    <!-- summary total -->
-    <section></section>
+    <!-- summary shopping -->
+    <section class="flex-1">
+      <h2 class="text-base font-medium lg:mt-8 mb-4 lg:text-xl">Order summary</h2>
+      <section class="border rounded-md bg-white overflow-hidden">
+        <div>
+          <app-product-cart-summary
+            *ngFor="let item of shoppingCart"
+            [productCart]="item"
+          >
+          </app-product-cart-summary>
+        </div>
+
+        <!-- total de la compra -->
+        <section *ngIf="summary">
+          <div class="w-full max-w-3xl m-auto p-6 bg-white">
+            <blockquote>
+              <div class="flex justify-between py-4 ">
+                <p class="text-sm font-semibold md:text-base">Subtotal</p>
+                <p class="text-sm font-semibold md:text-base">{{summary.subtotal | currency}}</p>
+              </div>
+              <div class="flex justify-between py-4 ">
+                <p class="text-sm font-semibold md:text-base">Shipping</p>
+                <p class="text-sm font-semibold md:text-base">{{summary.shipment| currency}}</p>
+              </div>
+              <div class="flex justify-between py-4 border-b">
+                <p class="text-sm font-semibold md:text-base">Taxes</p>
+                <p class="text-sm font-semibold md:text-base">{{summary.taxes | currency}}</p>
+              </div>
+              <div class="flex justify-between py-4 border-b">
+                <h2 class="text-base font-semibold md:text-lg">Order total</h2>
+                <p class="text-base font-semibold md:text-lg">{{summary.total | currency}}</p>
+              </div>
+            </blockquote>
+            <button class="w-full text-lg text-white font-medium rounded-md mt-6 px-3 py-3 bg-blue-600 hover:bg-blue-700 active:bg-blue-900">
+              Confirm order
+            </button>
+          </div>
+        </section>
+      </section>
+    </section>
+
   </div>
 </section>
 
