@@ -3,13 +3,23 @@
 
     <!-- sección de formularios -->
     <section class="flex-1">
-      <form class="divide-y">
+      <form class="divide-y" [formGroup]="form">
         <section class="py-8">
           <h2 class="text-base font-medium mb-4 lg:text-xl">Contact information</h2>
           <div>
             <label for="email" class="block text-xs font-medium mb-1 lg:text-base">Email address</label>
-            <input class="block w-full h-9 rounded-md border-2 py-2 px-3 text-slate-600" type="email" name="email" id="email">
-            <!-- <div>mensajes error</div> -->
+            <input
+              class="block w-full h-9 rounded-md border-2 py-2 px-3 text-slate-600 outline-0" type="email" name="email" id="email"
+              formControlName="email"
+              [class.border-green-400]="emailField?.valid && emailField?.touched"
+              [class.border-red-400]="emailField?.invalid && emailField?.touched"
+            >
+            <ng-container>
+              <div class="opacity-0 transition-all ease-in-out duration-500 delay-200" [class.opacity-100]="emailField?.invalid && emailField?.touched">
+                <p *ngIf="emailField?.hasError('required')" class="text-red-400 font-medium italic">This field is required</p>
+                <p *ngIf="emailField?.hasError('email')" class="text-red-400 font-medium italic">Enter a valid email address</p>
+              </div>
+            </ng-container>
           </div>
         </section>
 
@@ -18,45 +28,97 @@
           <div class="sm:flex gap-3">
             <div class="my-5 flex-1">
               <label for="name" class="block text-xs font-medium mb-1 lg:text-base" >First name</label>
-              <input class="block w-full h-9 rounded-md border-2 py-2 px-3 text-slate-600" type="text" name="name" id="name" >
-              <!-- <div>mensajes error</div> -->
+              <input class="block w-full h-9 rounded-md border-2 py-2 px-3 text-slate-600 outline-0" type="text" name="name" id="name"
+                formControlName="firstName"
+                [class.border-green-400]="nameField?.valid && nameField?.touched"
+                [class.border-red-400]="nameField?.invalid && nameField?.touched"
+              >
+              <ng-container>
+                <div class="opacity-0 transition-all ease-in-out duration-500 delay-200" [class.opacity-100]="nameField?.invalid && nameField?.touched">
+                  <p *ngIf="nameField?.hasError('required')" class="text-red-400 font-medium italic">This field is required</p>
+                  <p *ngIf="nameField?.hasError('maxlength')" class="text-red-400 font-medium italic">maximum 15 characters</p>
+                </div>
+              </ng-container>
             </div>
             <div class="my-5 flex-1">
               <label for="last" class="block text-xs font-medium mb-1 lg:text-base" >Last name</label>
-              <input class="block w-full h-9 rounded-md border-2 py-2 px-3 text-slate-600" type="text" name="last" id="last" >
-              <!-- <div>mensajes error</div> -->
+              <input class="block w-full h-9 rounded-md border-2 py-2 px-3 text-slate-600 outline-0" type="text" name="last" id="last"
+                formControlName="lastName"
+                [class.border-green-400]="lastField?.valid && lastField?.touched"
+                [class.border-red-400]="lastField?.invalid && lastField?.touched"
+              >
+              <ng-container>
+                <div class="opacity-0 transition-all ease-in-out duration-500 delay-200" [class.opacity-100]="lastField?.invalid && lastField?.touched">
+                  <p *ngIf="lastField?.hasError('required')" class="text-red-400 font-medium italic">This field is required</p>
+                  <p *ngIf="lastField?.hasError('maxlength')" class="text-red-400 font-medium italic">maximum 15 characters</p>
+                </div>
+              </ng-container>
             </div>
           </div>
 
           <div class="my-5">
             <label for="company" class="block text-xs font-medium mb-1 lg:text-base" >Company</label>
-            <input class="block w-full h-9 rounded-md border-2 py-2 px-3 text-slate-600" type="text" name="company" id="company">
-            <!-- <div>mensajes error</div> -->
+            <input class="block w-full h-9 rounded-md border-2 py-2 px-3 text-slate-600 outline-0" type="text" name="company" id="company"
+              formControlName="company"
+              [class.border-green-400]="companyField?.valid && companyField?.touched"
+              [class.border-red-400]="companyField?.invalid && companyField?.touched"
+            >
+            <ng-container>
+              <div class="opacity-0 transition-all ease-in-out duration-500 delay-200" [class.opacity-100]="companyField?.invalid && companyField?.touched">
+                <p *ngIf="companyField?.hasError('required')" class="text-red-400 font-medium italic">This field is required</p>
+                <p *ngIf="companyField?.hasError('maxlength')" class="text-red-400 font-medium italic">maximum 15 characters</p>
+              </div>
+            </ng-container>
           </div>
 
           <div class="my-5">
             <label for="address" class="block text-xs font-medium mb-1 lg:text-base" >Address</label>
-            <input class="block w-full h-9 rounded-md border-2 py-2 px-3 text-slate-600" type="text" name="address" id="address">
-            <!-- <div>mensajes error</div> -->
+            <input class="block w-full h-9 rounded-md border-2 py-2 px-3 text-slate-600 outline-0" type="text" name="address" id="address"
+              formControlName="address"
+              [class.border-green-400]="addressField?.valid && addressField?.touched"
+              [class.border-red-400]="addressField?.invalid && addressField?.touched"
+            >
+            <ng-container>
+              <div class="opacity-0 transition-all ease-in-out duration-500 delay-200" [class.opacity-100]="addressField?.invalid && addressField?.touched">
+                <p *ngIf="addressField?.hasError('required')" class="text-red-400 font-medium italic">This field is required</p>
+              </div>
+            </ng-container>
           </div>
 
           <div class="my-5">
             <label for="apartment" class="block text-xs font-medium mb-1 lg:text-base">Apartment, suite, etc.</label>
-            <input class="block w-full h-9 rounded-md border-2 py-2 px-3 text-slate-600" type="text" name="apartment" id="apartment">
-            <!-- <div>mensajes error</div> -->
+            <input class="block w-full h-9 rounded-md border-2 py-2 px-3 text-slate-600 outline-0" type="text" name="apartment" id="apartment"
+              formControlName="apartment"
+              [class.border-green-400]="apartmentField?.valid && apartmentField?.touched"
+              [class.border-red-400]="apartmentField?.invalid && apartmentField?.touched"
+            >
+            <ng-container>
+              <div class="opacity-0 transition-all ease-in-out duration-500 delay-200" [class.opacity-100]="apartmentField?.invalid && apartmentField?.touched">
+                <p *ngIf="apartmentField?.hasError('required')" class="text-red-400 font-medium italic">This field is required</p>
+              </div>
+            </ng-container>
           </div>
 
           <div class="sm:flex sm:gap-3">
             <div class="my-5 flex-1">
               <label for="ciyt" class="block text-xs font-medium mb-1 lg:text-base">City</label>
-              <input class="block w-full h-9 rounded-md border-2 py-2 px-3 text-slate-600" type="text" name="city" id="city">
-              <!-- <div>mensajes error</div> -->
+              <input class="block w-full h-9 rounded-md border-2 py-2 px-3 text-slate-600 outline-0" type="text" name="city" id="city"
+                formControlName="city"
+                [class.border-green-400]="cityField?.valid && cityField?.touched"
+                [class.border-red-400]="cityField?.invalid && cityField?.touched"
+              >
+              <ng-container>
+                <div class="opacity-0 transition-all ease-in-out duration-500 delay-200" [class.opacity-100]="cityField?.invalid && cityField?.touched">
+                  <p *ngIf="cityField?.hasError('required')" class="text-red-400 font-medium italic">This field is required</p>
+                  <p *ngIf="cityField?.hasError('maxlength')" class="text-red-400 font-medium italic">maximum 15 characters</p>
+                </div>
+              </ng-container>
             </div>
 
             <div class="my-5 flex-1">
               <label for="country" class="block text-xs font-medium mb-1 lg:text-base">Country</label>
-              <select name="country" id="country" class="block w-full h-9 rounded-md border-2">
-                <option value="">United State</option>
+              <select name="country" id="country" class="block w-full h-9 rounded-md border-2" formControlName="country">
+                <option value="united state">United State</option>
               </select>
               <!-- <div>mensajes error</div> -->
             </div>
@@ -65,21 +127,47 @@
           <div class="sm:flex sm:gap-3">
             <div class="my-5 flex-1">
               <label for="province" class="block text-xs font-medium mb-1 lg:text-base">State / Province</label>
-              <input class="block w-full h-9 rounded-md border-2 py-2 px-3 text-slate-600" name="province" id="province">
-              <!-- <div>mensajes error</div> -->
+              <input class="block w-full h-9 rounded-md border-2 py-2 px-3 text-slate-600 outline-0" type="text" name="province" id="province"
+                formControlName="province"
+                [class.border-green-400]="provinceField?.valid && provinceField?.touched"
+                [class.border-red-400]="provinceField?.invalid && provinceField?.touched"
+              >
+              <ng-container>
+                <div class="opacity-0 transition-all ease-in-out duration-500 delay-200" [class.opacity-100]="provinceField?.invalid && provinceField?.touched">
+                  <p *ngIf="provinceField?.hasError('required')" class="text-red-400 font-medium italic">This field is required</p>
+                  <p *ngIf="provinceField?.hasError('maxlength')" class="text-red-400 font-medium italic">maximum 15 characters</p>
+                </div>
+              </ng-container>
             </div>
 
             <div class="my-5 flex-1">
               <label for="code" class="block text-xs font-medium mb-1 lg:text-base">Postal code</label>
-              <input class="block w-full h-9 rounded-md border-2 py-2 px-3 text-slate-600" name="code" id="code">
-              <!-- <div>mensajes error</div> -->
+              <input class="block w-full h-9 rounded-md border-2 py-2 px-3 text-slate-600 outline-0" type="number" name="code" id="code"
+                formControlName="code"
+                [class.border-green-400]="codeField?.valid && codeField?.touched"
+                [class.border-red-400]="codeField?.invalid && codeField?.touched"
+              >
+              <ng-container>
+                <div class="opacity-0 transition-all ease-in-out duration-500 delay-200" [class.opacity-100]="codeField?.invalid && codeField?.touched">
+                  <p *ngIf="codeField?.hasError('required')" class="text-red-400 font-medium italic">This field is required</p>
+                  <p *ngIf="codeField?.hasError('maxlength')" class="text-red-400 font-medium italic">maximum 25 characters</p>
+                </div>
+              </ng-container>
             </div>
           </div>
 
           <div class="my-5">
             <label for="phone" class="block text-xs font-medium mb-1 lg:text-base">Phone</label>
-            <input class="block w-full h-9 rounded-md border-2 py-2 px-3 text-slate-600" name="phone" id="phone">
-            <!-- <div>mensajes error</div> -->
+            <input class="block w-full h-9 rounded-md border-2 py-2 px-3 text-slate-600 outline-0" type="tel" name="phone" id="phone"
+              formControlName="phone"
+              [class.border-green-400]="phoneField?.valid && phoneField?.touched"
+              [class.border-red-400]="phoneField?.invalid && phoneField?.touched"
+            >
+            <ng-container>
+              <div class="opacity-0 transition-all ease-in-out duration-500 delay-200" [class.opacity-100]="phoneField?.invalid && phoneField?.touched">
+                <p *ngIf="phoneField?.hasError('required')" class="text-red-400 font-medium italic">This field is required</p>
+              </div>
+            </ng-container>
           </div>
 
         </section>
@@ -95,7 +183,7 @@
                 </div>
                 <p class="text-xs font-medium lg:text-sm self-end">$5.00</p>
               </div>
-              <input type="checkbox">
+              <input type="checkbox" formControlName="standar">
             </section>
 
             <section class="flex-1 flex justify-between items-start border rounded-xl p-3 mb-3">
@@ -106,7 +194,7 @@
                 </div>
                 <p class="text-xs font-medium lg:text-sm self-end">$16.00</p>
               </div>
-              <input type="checkbox">
+              <input type="checkbox" formControlName="express">
             </section>
           </div>
         </section>
@@ -115,37 +203,65 @@
           <h2 class="text-base font-medium mb-4 lg:text-lg">Payment</h2>
           <div class="my-5 flex flex-col gap-2 sm:flex-row sm:gap-8 ">
             <label class="flex items-center">
-              <input type="radio" name="pay"><span class="text-xs font-medium ml-2 lg:text-base" >Credit card</span>
+              <input type="radio" name="payment" value="credit" formControlName="payment" >
+              <span class="text-xs font-medium ml-2 lg:text-base" >Credit card</span>
             </label>
             <label class="flex items-center">
-              <input type="radio" name="pay"><span class="text-xs font-medium ml-2 lg:text-base">PayPal</span>
+              <input type="radio" name="payment" value="paypal" formControlName="payment">
+              <span class="text-xs font-medium ml-2 lg:text-base">PayPal</span>
             </label>
             <label class="flex items-center">
-              <input type="radio" name="pay"><span class="text-xs font-medium ml-2 lg:text-base">eTransfer</span>
+              <input type="radio" name="payment" value="transfer" formControlName="payment">
+              <span class="text-xs font-medium ml-2 lg:text-base">eTransfer</span>
             </label>
           </div>
 
           <div class="my-5">
             <label class="block text-xs font-medium mb-1 lg:text-base" for="card">Card number</label>
-            <input class="block w-full h-9 rounded-md border-2 py-2 px-3 text-slate-600" type="number" name="card" id="card">
-            <!-- <div>mensaje error</div> -->
+            <input class="block w-full h-9 rounded-md border-2 py-2 px-3 text-slate-600 outline-0" type="number" name="card" id="card"
+              formControlName="cardNumber"
+              [class.border-green-400]="cardNumberField?.valid && cardNumberField?.touched"
+              [class.border-red-400]="cardNumberField?.invalid && cardNumberField?.touched"
+            >
+            <ng-container>
+              <div class="opacity-0 transition-all ease-in-out duration-500 delay-200" [class.opacity-100]="cardNumberField?.invalid && cardNumberField?.touched">
+                <p *ngIf="cardNumberField?.hasError('required')" class="text-red-400 font-medium italic">This field is required</p>
+              </div>
+            </ng-container>
           </div>
 
           <div class="my-5">
             <label class="block text-xs font-medium mb-1 lg:text-base" for="name-card">Name on card</label>
-            <input class="block w-full h-9 rounded-md border-2 py-2 px-3 text-slate-600" type="text" name="name-card" id="name-card">
-            <!-- <div>mensaje error</div> -->
+            <input class="block w-full h-9 rounded-md border-2 py-2 px-3 text-slate-600 outline-0" type="text" name="name-card" id="name-card"
+              formControlName="nameCard"
+              [class.border-green-400]="cardNameField?.valid && cardNameField?.touched"
+              [class.border-red-400]="cardNameField?.invalid && cardNameField?.touched"
+            >
+            <ng-container>
+              <div class="opacity-0 transition-all ease-in-out duration-500 delay-200" [class.opacity-100]="cardNameField?.invalid && cardNameField?.touched">
+                <p *ngIf="cardNameField?.hasError('required')" class="text-red-400 font-medium italic">This field is required</p>
+              </div>
+            </ng-container>
           </div>
 
           <section class="flex justify-between gap-3">
             <div class="my-5 w-3/4">
               <label class="block text-xs font-medium mb-1 lg:text-base" for="date">Expiration date (MM/YY)</label>
-              <input class="block w-full h-9 rounded-md border-2 pt-2 px-3 text-slate-600" type="datetime" name="date" id="date">
+              <input class="block w-full h-9 rounded-md border-2 py-2 px-3 text-slate-600 outline-0" type="datetime" name="date" id="date" formControlName="date">
             </div>
 
             <div class="my-5 w-1/4">
               <label class="block text-xs font-medium mb-1 lg:text-base" for="cvc">CVC</label>
-              <input class="block w-full h-9 rounded-md border-2 py-2 px-3 text-slate-600" type="number" name="cvc" id="cvc">
+              <input class="block w-full h-9 rounded-md border-2 py-2 px-3 text-slate-600 outline-0" type="number" name="cvc" id="cvc"
+                formControlName="cvc"
+                [class.border-green-400]="cvcField?.valid && cvcField?.touched"
+                [class.border-red-400]="cvcField?.invalid && cvcField?.touched"
+              >
+              <ng-container>
+                <div class="opacity-0 transition-all ease-in-out duration-500 delay-200" [class.opacity-100]="cvcField?.invalid && cvcField?.touched">
+                  <p *ngIf="cvcField?.hasError('required')" class="text-red-400 font-medium italic">This field is required</p>
+                </div>
+              </ng-container>
             </div>
           </section>
 
@@ -169,7 +285,7 @@
         </div>
 
         <!-- total de la compra -->
-        <section *ngIf="summary">
+        <ng-container *ngIf="summary">
           <div class="w-full max-w-3xl m-auto p-6 bg-white">
             <blockquote>
               <div class="flex justify-between py-4 ">
@@ -193,7 +309,7 @@
               Confirm order
             </button>
           </div>
-        </section>
+        </ng-container>
       </section>
     </section>
 
