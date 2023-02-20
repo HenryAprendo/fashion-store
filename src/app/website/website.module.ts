@@ -5,6 +5,7 @@ import { WebsiteRoutingModule } from './website-routing.module';
 import { LayoutComponent } from './components/layout/layout.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './pages/home/home.component';
+import { SharedModule } from './../shared/shared.module';
 
 
 
@@ -16,7 +17,8 @@ import { HomeComponent } from './pages/home/home.component';
   ],
   imports: [
     CommonModule,
-    WebsiteRoutingModule
+    WebsiteRoutingModule,
+    SharedModule
   ]
 })
 export class WebsiteModule { }

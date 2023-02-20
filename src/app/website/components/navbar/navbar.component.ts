@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs';
 import { CartService } from './../../../services/cart.service';
+import { listCategory, CategoryList } from './../../../util/category';
 
 @Component({
   selector: 'app-navbar',
@@ -8,6 +9,8 @@ import { CartService } from './../../../services/cart.service';
   styleUrls: []
 })
 export class NavbarComponent implements OnInit {
+
+  listCategory: CategoryList[] = listCategory;
 
   open:boolean = false;
 

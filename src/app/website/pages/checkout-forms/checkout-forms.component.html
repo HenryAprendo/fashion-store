@@ -292,19 +292,22 @@
             <div class="w-full max-w-3xl m-auto p-6 bg-white">
               <blockquote>
                 <app-container-item [border]="false">
-                  <p class="text-sm font-semibold md:text-base">Subtotal</p>
+                  <ng-container *ngTemplateOutlet="title; context: {$implicit: 'Subtotal'}" ></ng-container>
                   <p class="text-sm font-semibold md:text-base">{{summary.subtotal | currency}}</p>
                 </app-container-item>
+
                 <app-container-item [border]="false">
-                  <p class="text-sm font-semibold md:text-base">Shipping</p>
+                  <ng-container *ngTemplateOutlet="title; context: {$implicit: 'Shipping'}" ></ng-container>
                   <p class="text-sm font-semibold md:text-base">{{summary.shipment| currency}}</p>
                 </app-container-item>
+
                 <app-container-item>
-                  <p class="text-sm font-semibold md:text-base">Taxes</p>
+                  <ng-container *ngTemplateOutlet="title; context: {$implicit: 'Taxes'}" ></ng-container>
                   <p class="text-sm font-semibold md:text-base">{{summary.taxes | currency}}</p>
                 </app-container-item>
+
                 <app-container-item>
-                  <p class="text-base font-semibold md:text-lg">Order total</p>
+                  <h2 class="text-base font-semibold md:text-lg">Order total</h2>
                   <p class="text-base font-semibold md:text-lg">{{summary.total | currency}}</p>
                 </app-container-item>
               </blockquote>
@@ -323,7 +326,10 @@
   </form>
 </section>
 
-
+<!-- Reutilización del elemento <p> en el html con ng-template en ng-container -->
+<ng-template #title let-text>
+  <p class="text-sm font-semibold md:text-base">{{text}}</p>
+</ng-template>
 
 
 
