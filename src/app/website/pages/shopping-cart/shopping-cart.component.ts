@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SharedModule } from './../../../shared/shared.module';
 import { CartService } from './../../../services/cart.service';
 import { OrderSummaryService } from './../../../services/order-summary.service';
 import { Shopping } from './../../../models/shopping/shopping.model';
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-shopping-cart',
   standalone: true,
-  imports: [CommonModule, RouterModule, ListProductCartComponent],
+  imports: [CommonModule, SharedModule, RouterModule, ListProductCartComponent],
   templateUrl: './shopping-cart.component.html',
   styleUrls: ['./shopping-cart.component.css']
 })

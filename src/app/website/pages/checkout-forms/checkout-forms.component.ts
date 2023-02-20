@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SharedModule } from './../../../shared/shared.module';
 import { ReactiveFormsModule, FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { ProductCartSummaryComponent } from './../../components/product-cart-summary/product-cart-summary.component';
 import { CartService } from './../../../services/cart.service';
@@ -10,7 +11,7 @@ import { Summary } from './../../../models/summary/summary.model';
 @Component({
   selector: 'app-checkout-forms',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, ProductCartSummaryComponent],
+  imports: [CommonModule, SharedModule, ReactiveFormsModule, ProductCartSummaryComponent],
   templateUrl: './checkout-forms.component.html',
   styleUrls: ['./checkout-forms.component.css']
 })
@@ -111,6 +112,15 @@ export class CheckoutFormsComponent {
 
   get emailField(){
     return this.form.get('email');
+  }
+
+  confirmOrder(){
+    if(this.form.valid){
+      //enviar a la base de datos y redireccionar a la pagina de orden finalizada.
+    }
+    else {
+      this.form.markAllAsTouched();
+    }
   }
 
   orderSummary(){

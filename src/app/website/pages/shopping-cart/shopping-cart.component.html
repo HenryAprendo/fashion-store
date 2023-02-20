@@ -8,25 +8,25 @@
 </section>
 
 <!-- total de la compra -->
-<section *ngIf="summary">
+<ng-container *ngIf="summary; else message">
   <div class="w-full max-w-2xl m-auto p-2 mt-8">
     <blockquote class="bg-gray-100 rounded-xl p-6">
-      <div class="flex justify-between py-4 border-b">
+      <app-container-item>
         <p class="text-base text-gray-500 ">Subtotal</p>
         <p class="text-base text-gray-700 font-semibold">{{summary.subtotal | currency}}</p>
-      </div>
-      <div class="flex justify-between py-4 border-b">
+      </app-container-item>
+      <app-container-item >
         <p class="text-base text-gray-500 ">Shipping</p>
         <p class="text-base text-gray-700 font-semibold">{{summary.shipment| currency}}</p>
-      </div>
-      <div class="flex justify-between py-4 border-b">
+      </app-container-item>
+      <app-container-item>
         <p class="text-base text-gray-500 ">Tax</p>
         <p class="text-base text-gray-700 font-semibold">{{summary.taxes | currency}}</p>
-      </div>
-      <div class="flex justify-between py-4 border-b">
+      </app-container-item>
+      <app-container-item>
         <h2 class="text-xl text-gray-500 font-semibold">Order total</h2>
         <p class="text-xl text-gray-700 font-semibold">{{summary.total | currency}}</p>
-      </div>
+      </app-container-item>
     </blockquote>
     <button class="w-full text-xl text-white font-medium rounded-md my-8 px-3 py-3 bg-blue-600 hover:bg-blue-700 active:bg-blue-900" (click)="navigate()">
       Checkout
@@ -38,19 +38,20 @@
       </svg>
     </a>
   </div>
-</section>
-
+</ng-container>
 
 <!-- Sin compras en el carrito -->
-<section *ngIf="!summary" class="p-6">
-  <div class="max-w-sm m-auto h-80 flex flex-col gap-6 items-center justify-center shadow py-5 rounded-md bg-yellow-300">
-    <h2 class="text-3xl font-medium text-indigo-900 text-center mb-4"> !oh, there are no products in the cart yet.¡</h2>
-    <a routerLink="../products"
-      class="flex items-center justify-center gap-2 p-3 rounded-md bg-indigo-700 hover:bg-indigo-800 text-white text-xl font-medium hover:cursor-pointer  ">
-      go to the <span>product section</span>
-    </a>
-  </div>
-</section>
+<ng-template #message >
+  <section class="p-6">
+    <div class="max-w-sm m-auto h-80 flex flex-col gap-6 items-center justify-center shadow py-5 rounded-md bg-yellow-300">
+      <h2 class="text-3xl font-medium text-indigo-900 text-center mb-4"> !oh, there are no products in the cart yet.¡</h2>
+      <a routerLink="../products"
+        class="flex items-center justify-center gap-2 p-3 rounded-md bg-indigo-700 hover:bg-indigo-800 text-white text-xl font-medium hover:cursor-pointer  ">
+        go to the <span>product section</span>
+      </a>
+    </div>
+  </section>
+</ng-template>
 
 
 
