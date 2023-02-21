@@ -15,6 +15,8 @@ export class ProductsComponent implements OnInit {
 
   products: Product[] = [];
 
+  show:boolean = false;
+
   constructor(private productService: ProductService){ }
 
   ngOnInit() {
@@ -25,6 +27,7 @@ export class ProductsComponent implements OnInit {
     this.productService.getAll()
       .subscribe(data => {
         this.products = data;
+        this.show = !this.show;
         console.log(data);
       });
   }

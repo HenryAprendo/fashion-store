@@ -14,7 +14,7 @@ import { ProductListComponent } from './../../components/product-list/product-li
     <div class="w-full pl-10 my-7 box-border">
       <h1 class="text-3xl font-semibold ">{{title}}</h1>
     </div>
-    <app-product-list [products]="products"></app-product-list>
+    <app-product-list [products]="products" [show]="show" ></app-product-list>
   `,
   styles: [
   ]
@@ -26,6 +26,8 @@ export class CategoryComponent implements OnInit {
   category!:number;
 
   products!: Product[];
+
+  show:boolean = false;
 
   constructor(
     private categoryService:CategoryService,
@@ -41,6 +43,7 @@ export class CategoryComponent implements OnInit {
     ).subscribe(data => {
       this.products = data;
       this.title = CATEGORIES[this.category];
+      this.show = !this.show;
     });
   }
 
