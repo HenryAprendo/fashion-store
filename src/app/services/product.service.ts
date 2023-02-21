@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Product } from './../models/product/product.model';
-import { Observable } from 'rxjs';
+import { catchError, Observable, throwError } from 'rxjs';
+import { HandleService } from './handle.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,15 +11,39 @@ export class ProductService {
 
   url = 'https://fakestoreapi.com/products';
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private handle: HandleService
+  ) { }
 
   getAll(): Observable<Product[]> {
-    return this.http.get<Product[]>(this.url);
+    return this.http.get<Product[]>(this.url).pipe(
+      catchError((error:HttpErrorResponse) => {
+        return this.handle.handleError(error);
+      })
+    )
   }
 
   getOne(id:number): Observable<Product> {
-    return this.http.get<Product>(`${this.url}/${id}`);
+    return this.http.get<Product>(`${this.url}/${id}`).pipe(
+      catchError((error:HttpErrorResponse) => {
+        return this.handle.handleError(error);
+      })
+    )
   }
 
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -40,10 +40,17 @@ export class CategoryComponent implements OnInit {
         this.category = Number(params.get('category'));
         return this.categoryService.getProductCategory(this.category);
       })
-    ).subscribe(data => {
-      this.products = data;
-      this.title = CATEGORIES[this.category];
-      this.show = !this.show;
+    ).subscribe({
+      next: (data) => {
+        this.products = data;
+        this.title = CATEGORIES[this.category];
+        this.show = !this.show;
+      },
+
+      error: (err) => {
+        console.log(err);
+      }
+
     });
   }
 

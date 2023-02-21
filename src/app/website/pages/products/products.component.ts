@@ -24,12 +24,33 @@ export class ProductsComponent implements OnInit {
   }
 
   getAllProducts(){
+
     this.productService.getAll()
-      .subscribe(data => {
-        this.products = data;
-        this.show = !this.show;
-        console.log(data);
-      });
+      .subscribe({
+        next: (data) => {
+          this.products = data;
+          this.show = !this.show;
+          console.log(data);
+        },
+
+        error: (err) => {
+          console.log(err);
+        }
+
+      })
+
   }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
