@@ -73,7 +73,7 @@
         </li>
         <li class="relative">
           <a class="block text-white p-1 font-medium hover:cursor-pointer" (click)="openCategory()">Categories</a>
-          <div class="w-full absolute z-10 bg-slate-800 text-white flex flex-col w-44 rounded-lg border p-2" (click)="openCategory()" [ngClass]="category ? 'block' : 'hidden' ">
+          <div class="w-full absolute z-10 bg-slate-800 text-white flex flex-col rounded-lg border p-2" (click)="openCategory()" [ngClass]="category ? 'block' : 'hidden' ">
             <ng-container *ngFor="let category of listCategory">
               <app-category-items [item]="category"></app-category-items>
             </ng-container>

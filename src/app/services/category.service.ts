@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Product } from './../models/product/product.model';
-import { catchError, Observable } from 'rxjs';
+import { catchError, Observable, retry } from 'rxjs';
 import { HandleService } from './handle.service';
 
 
@@ -27,6 +27,7 @@ export class CategoryService {
   getProductCategory(index:number): Observable<Product[]> {
     let category = CATEGORIES[index];
     return this.http.get<Product[]>(`${this.url}/${category}`).pipe(
+      retry(3),
       catchError((error:HttpErrorResponse) => {
         return this.handler.handleError(error);
       })
