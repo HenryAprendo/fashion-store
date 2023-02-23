@@ -5,6 +5,7 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.component';
+import { LoginComponent } from './pages/login/login.component';
 
 const routes: Routes = [
 
@@ -40,6 +41,10 @@ const routes: Routes = [
       {
         path: 'checkout-forms',
         loadComponent: () => import('./pages/checkout-forms/checkout-forms.component').then(m => m.CheckoutFormsComponent)
+      },
+      {
+        path: 'login',
+        component: LoginComponent
       }
 
     ]
