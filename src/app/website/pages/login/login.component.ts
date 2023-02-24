@@ -58,12 +58,12 @@ export class LoginComponent {
     return this.loginForm.get('username');
   }
 
-  get emailIsValid(){
+  get usernameIsValid(){
     return this.usernameField?.valid && this.usernameField.touched;
   }
 
-  get emailIsInvalid(){
-    return this.usernameField?.valid && this.usernameField.touched;
+  get usernameIsInvalid(){
+    return this.usernameField?.invalid && this.usernameField.touched;
   }
 
   get passwordField(){
