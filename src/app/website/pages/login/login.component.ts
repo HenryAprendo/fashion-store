@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormGroup, Validators, FormBuilder } from '@angular/forms';
-import { Login } from './../../../models/auth/login.auth';
+import { AuthService } from './../../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +14,10 @@ export class LoginComponent {
 
   loginForm!:FormGroup;
 
-  constructor(private fB:FormBuilder){
+  constructor(
+    private fB:FormBuilder,
+    private authService:AuthService
+  ){
     this.buildForm();
   }
 
@@ -28,12 +31,19 @@ export class LoginComponent {
 
   login(){
     if(this.loginForm.valid){
-      const data:Login = {
-        username: this.usernameField?.value,
-        password: this.passwordField?.value
-      }
 
-      // todo
+      const username = this.usernameField?.value;
+      const password = this.passwordField?.value;
+
+      this.authService.login(username,password).subscribe({
+        next: (response) => {
+          console.log(response);
+        },
+
+        error: (err) => {
+          console.log(err);
+        }
+      })
     }
     else {
       this.loginForm.markAllAsTouched();
