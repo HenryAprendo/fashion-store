@@ -13,21 +13,36 @@
     </section>
 
     <section>
-      <form class="space-y-5">
+      <form class="space-y-5" [formGroup]="loginForm">
         <section>
           <div>
-            <label for="email" class="sr-only">Email address</label>
-            <input class="relative block w-full px-3 py-2 appearance-none rounded-none rounded-t-md border border-gray-300 text-gray-900 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 placeholder-gray-500" type="email" id="email" name="email" placeholder="Email address">
+            <label for="user" class="sr-only">Username</label>
+            <input class="relative block w-full px-3 py-2 appearance-none rounded-none rounded-t-md border border-gray-300 text-gray-900 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 placeholder-gray-500"
+              type="user"
+              id="user"
+              name="user"
+              placeholder="Username"
+              formControlName="username"
+            >
           </div>
           <div>
-            <label for="email" class="sr-only">Password</label>
-            <input class="relative block w-full px-3 py-2 appearance-none rounded-none rounded-b-md border border-gray-300 text-gray-900 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 placeholder-gray-500" type="email" id="email" name="email" placeholder="Password">
+            <label for="password" class="sr-only">Password</label>
+            <input class="relative block w-full px-3 py-2 appearance-none rounded-none rounded-b-md border border-gray-300 text-gray-900 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 placeholder-gray-500"
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Password"
+              formControlName="password"
+            >
           </div>
         </section>
 
         <section class="flex justify-start gap-x-3 w-4/6 sm:justify-between sm:w-full">
           <div class="flex items-center gap-x-3">
-            <input class="h-4 w-4 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" type="checkbox">
+            <input class="h-4 w-4 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+              type="checkbox"
+              formControlName="remember"
+            >
             <label class="text-sm text-gray-900 sm:text-base">Remember me</label>
           </div>
           <div>
@@ -36,7 +51,7 @@
         </section>
 
         <section>
-          <button class="relative bg-indigo-600 w-full rounded-md py-2 px-3 text-white">
+          <button type="submit" class="relative bg-indigo-600 w-full rounded-md py-2 px-3 text-white">
             <span class="absolute inset-y-0 left-0 flex items-center ml-3">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-indigo-500">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
