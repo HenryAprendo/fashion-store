@@ -8,6 +8,8 @@ import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.compo
 import { LoginComponent } from './pages/login/login.component';
 import { AuthGuard } from './../guard/auth.guard';
 import { authGuardFn } from './../guard/authFn.guard';
+import { CanDeactivateGuard } from './../guard/exit.guard';
+
 
 const routes: Routes = [
 
@@ -43,7 +45,8 @@ const routes: Routes = [
       {
         path: 'checkout-forms',
         loadComponent: () => import('./pages/checkout-forms/checkout-forms.component').then(m => m.CheckoutFormsComponent),
-        canActivate: [authGuardFn]
+        canActivate: [authGuardFn],
+        canDeactivate: [CanDeactivateGuard]
       },
       {
         path: 'login',
