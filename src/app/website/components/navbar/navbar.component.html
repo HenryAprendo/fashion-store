@@ -25,6 +25,7 @@
   <nav class="bg-white flex justify-between items-center p-2 max-w-7xl mx-auto border-b h-16">
     <div class=" sm:hidden">
       <button class="flex rounded-md p-1 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-slate-700 ">
+        <!-- icono menu hamburguesa -->
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
           class="w-6 h-6"
           [ngClass]="open ? 'hidden' : 'block' "
@@ -32,6 +33,7 @@
           <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
         </svg>
 
+        <!-- icono boton cerrar -->
         <svg  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
         class="w-6 h-6"
         [ngClass]="open ? 'block' : 'hidden'"
@@ -109,11 +111,8 @@
 
 </header>
 
-
-
-
-
-
+<!-- TODO pendiente por mejorar el menu, para ocultar lo que no corresponde al login y create user por medio de la deteccion de rutas,
+en otra version-->
 
 
 

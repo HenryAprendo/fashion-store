@@ -6,6 +6,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.component';
 import { LoginComponent } from './pages/login/login.component';
+import { AuthGuard } from './../guard/auth.guard';
+import { authGuardFn } from './../guard/authFn.guard';
 
 const routes: Routes = [
 
@@ -36,11 +38,12 @@ const routes: Routes = [
       },
       {
         path: 'shopping-cart',
-        component: ShoppingCartComponent
+        component: ShoppingCartComponent,
       },
       {
         path: 'checkout-forms',
-        loadComponent: () => import('./pages/checkout-forms/checkout-forms.component').then(m => m.CheckoutFormsComponent)
+        loadComponent: () => import('./pages/checkout-forms/checkout-forms.component').then(m => m.CheckoutFormsComponent),
+        canActivate: [authGuardFn]
       },
       {
         path: 'login',

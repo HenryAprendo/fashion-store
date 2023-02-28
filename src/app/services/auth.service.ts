@@ -11,10 +11,8 @@ import { Auth } from './../models/auth/auth.model';
 })
 export class AuthService {
 
-  active = false;
-  session$ = new BehaviorSubject<boolean>(this.active);
+  session$ = new BehaviorSubject<boolean>(false);
   stateSession = this.session$.asObservable();
-
 
   url = 'https://fakestoreapi.com/auth/login'
 
@@ -24,14 +22,11 @@ export class AuthService {
     private tokenService:TokenService
   ) { }
 
-
-
   login(username:string, password:string): Observable<Auth>{
     return this.http.post<Auth>(this.url,{ username, password }).pipe(
       tap((response) => {
         this.tokenService.save(response.token);
-        this.active = !this.active;
-        this.session$.next(this.active);
+        this.session$.next(true);
       }),
 
       catchError((error:HttpErrorResponse) => {
@@ -40,11 +35,9 @@ export class AuthService {
       )
     }
 
-
   logout(){
     this.tokenService.remove();
-    this.active = !this.active;
-    this.session$.next(this.active);
+    this.session$.next(false);
   }
 
 }
