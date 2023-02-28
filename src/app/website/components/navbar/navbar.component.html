@@ -2,12 +2,22 @@
 
   <div class="bg-slate-800 flex justify-between h-16 items-center py-2 px-3">
     <h2 class="text-3xl italic text-white font-semibold sm:block">fstore</h2>
-    <ul class="flex gap-3.5">
-      <li>
-        <a class="block text-white p-2 hover:border-b" routerLink="/login" [routerLinkActive]="'border-b border-red-500 text-red-500'" >Sign in</a>
+    <ul class="flex items-center gap-3.5">
+      <li *ngIf="!sessionActive">
+        <a class="block text-white font-medium p-2 hover:text-rose-600 active:text-rose-800 hover:cursor-pointer" routerLink="/login" [routerLinkActive]="'border-2 rounded-md border-red-500 text-red-500'" >Sign in</a>
       </li>
-      <li>
-        <a class="block text-white p-2 hover:border-b">Create account</a>
+      <li *ngIf="!sessionActive">
+        <a class="block text-white font-medium p-2 hover:text-rose-600 active:text-rose-800 hover:cursor-pointer">Create account</a>
+      </li>
+      <li *ngIf="sessionActive">
+        <a class="block text-white font-medium p-2 hover:text-rose-600 active:text-rose-800 hover:cursor-pointer" (click)="logout()" >Logout</a>
+      </li>
+      <li *ngIf="sessionActive">
+        <a class="block hover:cursor-pointer">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-700">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+        </a>
       </li>
     </ul>
   </div>
@@ -42,7 +52,7 @@
         <li>
           <a class="block text-zinc-900 p-2 font-semibold hover:text-blue-700 hover:border-blue-700 hover:cursor-pointer"
            routerLink="/products"
-           [routerLinkActive]="'text-red-500 border border-red-500'"
+           [routerLinkActive]="'border-2 rounded-md border-green-500 text-green-500'"
           >
             Products
           </a>
