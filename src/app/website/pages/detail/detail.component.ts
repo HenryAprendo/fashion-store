@@ -40,6 +40,9 @@ export class DetailComponent implements OnInit {
 }
 
 
+// Pendiente por implemenntar un resolveFn, que asegure la información del producto, en caso tal redireccionar, antes de
+// activar la ruta de componente (documentacion de angular resolver)
+
 
 
 

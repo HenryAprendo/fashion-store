@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { LayoutComponent } from './components/layout/layout.component';
 import { HomeComponent } from './pages/home/home.component';
-import { ProductsComponent } from './pages/products/products.component';
 import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.component';
 import { LoginComponent } from './pages/login/login.component';
 import { AuthGuard } from './../guard/auth.guard';
@@ -28,11 +27,17 @@ const routes: Routes = [
       },
       {
         path: 'products',
-        component: ProductsComponent
+        loadComponent: () => import('./pages/products/products.component').then(m => m.ProductsComponent),
+        data: {
+          preload: true,
+        }
       },
       {
         path: 'category',
-        loadComponent: () => import('./pages/category/category.component').then(m => m.CategoryComponent)
+        loadComponent: () => import('./pages/category/category.component').then(m => m.CategoryComponent),
+        data: {
+          preload: true,
+        }
       },
       {
         path: 'detail/:id',
