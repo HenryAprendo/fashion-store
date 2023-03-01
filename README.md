@@ -29,3 +29,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 # Hosting
 Project Console: https://console.firebase.google.com/project/fashion-store-956b2/overview
 Hosting URL: https://fashion-store-956b2.web.app
+
+# Login with username for checkout-form
+username:'johnd',
+password:'m38rmF$'
