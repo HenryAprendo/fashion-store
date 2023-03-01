@@ -6,6 +6,7 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './pages/home/home.component';
 import { SharedModule } from './../shared/shared.module';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -13,6 +14,7 @@ import { SharedModule } from './../shared/shared.module';
     LayoutComponent,
     NavbarComponent,
     HomeComponent,
+    FooterComponent,
   ],
   imports: [
     CommonModule,

@@ -11,10 +11,12 @@ import { ProductListComponent } from './../../components/product-list/product-li
   standalone: true,
   imports: [CommonModule, ProductListComponent, RouterModule],
   template: `
-    <div class="w-full pl-10 my-7 box-border">
-      <h1 class="text-3xl font-semibold ">{{title}}</h1>
-    </div>
-    <app-product-list [products]="products" [show]="show" ></app-product-list>
+    <section class="mb-8">
+      <div class="w-full pl-10 my-7 box-border">
+        <h1 class="text-3xl font-semibold ">{{title}}</h1>
+      </div>
+      <app-product-list [products]="products" [show]="show" ></app-product-list>
+    </section>
   `,
   styles: [
   ]

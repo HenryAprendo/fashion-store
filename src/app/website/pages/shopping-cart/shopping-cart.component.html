@@ -9,7 +9,7 @@
 
 <!-- total de la compra -->
 <ng-container *ngIf="summary; else message">
-  <div class="w-full max-w-2xl m-auto p-2 mt-8">
+  <div class="w-full max-w-2xl m-auto p-2 mt-8 mb-8">
     <blockquote class="bg-gray-100 rounded-xl p-6">
       <app-container-item>
         <ng-container *ngTemplateOutlet="title; context: {$implicit: 'Subtotal'}" ></ng-container>
