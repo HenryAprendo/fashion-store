@@ -1,3 +1,4 @@
+// informacion de categoria
 
 export interface CategoryList {
   path: string;
